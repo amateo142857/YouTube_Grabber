@@ -1,31 +1,222 @@
-# 📥 YouTube Downloader (yt-dlp)
+# 🎬 YouTube Downloader
 
-Este proyecto contiene dos descargadores de YouTube:
-1. **Versión Terminal (CLI)**: interactiva en consola, con menú y barra de progreso.
-2. **Versión Tkinter (GUI)**: aplicación gráfica con botones, barra de progreso y opciones.
+[![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-orange.svg)](https://github.com/yt-dlp/yt-dlp)
 
----
+## 📋 Descripción
 
-## 🚀 Características
-- Descarga videos en múltiples calidades (best, 1080p, 720p, 480p, 360p, worst).
-- Descarga solo audio en varios formatos (mp3, m4a, wav, flac, aac).
-- Descarga playlists completas.
-- Barra de progreso en tiempo real (CLI y GUI).
-- Selección de carpeta de destino (GUI).
-- Registro de eventos y mensajes claros.
+YouTube Downloader es una aplicación completa para descargar videos y audio de YouTube. Ofrece tanto una **interfaz gráfica** (GUI) como una **interfaz de línea de comandos** (CLI), permitiendo a los usuarios elegir su método preferido de descarga.
 
----
+### ✨ Características Principales
+
+- 🎥 **Descarga de videos** en múltiples calidades (1080p, 720p, 480p, 360p)
+- 🎵 **Extracción de audio** en diversos formatos (MP3, M4A, WAV, FLAC, AAC)
+- 📁 **Descarga de playlists** completas
+- 📊 **Barra de progreso** en tiempo real
+- 🎯 **Selección de calidad** personalizada
+- 📂 **Carpeta de destino** configurable
+- 🔄 **Soporte para múltiples URLs**
+- 🖥️ **Interfaz gráfica intuitiva**
+- ⌨️ **Interfaz CLI simple y efectiva**
+
+## 📸 Capturas de Pantalla
+
+### Interfaz Gráfica (GUI)
+![GUI Principal](screenshots/gui_main.png)
+
+### Interfaz CLI
+![CLI](screenshots/cli.png)
+
+## 🔧 Requisitos del Sistema
+
+- Python 3.6 o superior
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [FFmpeg](https://ffmpeg.org/) (necesario para descargas de audio y videos de alta calidad)
+- [Pillow](https://python-pillow.org/) (para la interfaz gráfica)
+
+## 📦 Instalación
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tu-usuario/youtube-downloader.git
+cd youtube-downloader
+```
+
+### 2. Crear un entorno virtual (recomendado)
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# o
+venv\Scripts\activate     # Windows
+```
+
+### 3. Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Instalar FFmpeg (obligatorio)
+
+#### Windows
+1. Descargar FFmpeg desde [ffmpeg.org](https://ffmpeg.org/download.html)
+2. Agregar la carpeta `bin` de FFmpeg al PATH del sistema
+
+#### Linux
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+#### MacOS
+```bash
+brew install ffmpeg
+```
+
+## 🚀 Uso
+
+### Interfaz Gráfica (GUI)
+
+Ejecutar el script principal:
+
+```bash
+python youtube_downloader_gui.py
+```
+
+#### Pasos para descargar:
+1. **Ingresar URL**: Pega o escribe la URL del video/playlist
+2. **Seleccionar tipo**: Video o Audio
+3. **Elegir calidad**: Best, 1080p, 720p, 480p, 360p o Worst
+4. **Configurar carpeta**: Selecciona dónde guardar el archivo
+5. **¡Descargar!**: Haz clic en el botón de descarga
+
+### Interfaz CLI
+
+Ejecutar el script de línea de comandos:
+
+```bash
+python youtube_downloader_cli.py
+```
+
+#### Menú interactivo:
+```
+==================================================
+🎬 DESCARGADOR DE YOUTUBE
+==================================================
+1. Descargar video
+2. Descargar solo audio
+3. Descargar playlist
+4. Salir
+==================================================
+```
+
+## 📖 Guía de Uso Detallada
+
+### Opciones de Calidad
+
+| Calidad | Descripción |
+|---------|-------------|
+| **Best** | Mejor calidad disponible |
+| **1080p** | Resolución 1920x1080 |
+| **720p** | Resolución 1280x720 |
+| **480p** | Resolución 854x480 |
+| **360p** | Resolución 640x360 |
+| **Worst** | Peor calidad disponible |
+
+### Formatos de Audio
+
+| Formato | Descripción | Uso Recomendado |
+|---------|-------------|-----------------|
+| **MP3** | MP3 estándar | Compatibilidad universal |
+| **M4A** | AAC en contenedor MP4 | Mejor calidad/compresión |
+| **WAV** | Audio sin comprimir | Edición de audio |
+| **FLAC** | Compresión sin pérdida | Calidad máxima |
+| **AAC** | Audio avanzado | Streaming/Dispositivos Apple |
+
+## 🛠️ Estructura del Proyecto
+
+```
+youtube-downloader/
+├── img/                        # Iconos y recursos gráficos
+│   └── icono1.png
+├── descargas/                  # Carpeta por defecto para descargas
+├── youtube_downloader_cli.py   # Interfaz de línea de comandos
+├── youtube_downloader_gui.py   # Interfaz gráfica
+├── requirements.txt            # Dependencias del proyecto
+├── README.md                   # Este archivo
+├── LICENSE                     # Licencia del proyecto
+└── .gitignore                  # Archivos ignorados por Git
+```
 
 ## 📦 Dependencias
-Instala las siguientes librerías antes de ejecutar:
 
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) → motor de descarga
-- ffmpeg → requerido para extracción de audio
-- termcolor → para colores en la versión terminal
-- pillow → para manejo de iconos en la versión Tkinter
-- tkinter → interfaz gráfica (ya incluido en Python estándar)
+### Requerimientos (`requirements.txt`)
 
-Instalación rápida:
-```bash
-pip install yt-dlp termcolor pillow
+```
+yt-dlp>=2023.10.13
+Pillow>=10.0.0
+termcolor>=2.3.0
+```
 
+## 🤝 Contribuciones
+
+¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
+
+1. Fork del repositorio
+2. Crear una rama para tu característica (`git checkout -b feature/AmazingFeature`)
+3. Commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abrir un Pull Request
+
+## 🐛 Reporte de Errores
+
+Si encuentras algún error, por favor:
+
+1. Verifica que tienes instaladas todas las dependencias
+2. Asegúrate de tener FFmpeg instalado y configurado
+3. Abre un issue en el repositorio con:
+   - Descripción detallada del problema
+   - Pasos para reproducirlo
+   - Mensajes de error completos
+   - Sistema operativo y versiones
+
+## ⚠️ Notas Importantes
+
+- **Uso Ético**: Esta herramienta está diseñada para descargar contenido con fines educativos y personales. Asegúrate de respetar los derechos de autor y los términos de servicio de YouTube.
+- **Actualizaciones**: YouTube cambia frecuentemente su estructura, por lo que es importante mantener yt-dlp actualizado:
+  ```bash
+  pip install --upgrade yt-dlp
+  ```
+- **Errores de FFmpeg**: Si experimentas problemas con el audio o videos de alta calidad, verifica que FFmpeg esté correctamente instalado.
+
+## 🎯 Próximas Características
+
+- [ ] Descarga por lotes desde archivo de texto
+- [ ] Soporte para otras plataformas (Vimeo, Dailymotion, etc.)
+- [ ] Integración con gestores de descarga
+- [ ] Conversión de formatos de video
+- [ ] Interfaz web
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 👤 Autor
+
+**Alejandro Mateo**
+
+[![GitHub](https://img.shields.io/badge/GitHub-AlejandroMateo-181717?style=for-the-badge&logo=github)](https://github.com/AlejandroMateo)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-AlejandroMateo-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/alejandromateo)
+
+## 🙏 Agradecimientos
+
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) por la increíble biblioteca de descarga
+- [FFmpeg](https://ffmpeg.org/) por el procesamiento de audio y video
+- A toda la comunidad de código abierto
+
+---
+
+⭐ **Si este proyecto te fue útil, ¡no olvides darle una estrella!** ⭐
