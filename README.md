@@ -23,10 +23,11 @@ YouTube Downloader es una aplicación completa para descargar videos y audio de 
 ## 📸 Capturas de Pantalla
 
 ### Interfaz Gráfica (GUI)
-![GUI Principal](screenshots/gui_main.png)
 
+![[Pasted image 20260728125558.png]]
 ### Interfaz CLI
-![CLI](screenshots/cli.png)
+
+![[Pasted image 20260728125803.png]]
 
 ## 🔧 Requisitos del Sistema
 
@@ -40,8 +41,8 @@ YouTube Downloader es una aplicación completa para descargar videos y audio de 
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/youtube-downloader.git
-cd youtube-downloader
+git clone https://github.com/amateo142857/YouTube_Grabber.git
+cd YouTube_Grabber
 ```
 
 ### 2. Crear un entorno virtual (recomendado)
@@ -83,7 +84,7 @@ brew install ffmpeg
 Ejecutar el script principal:
 
 ```bash
-python youtube_downloader_gui.py
+python descargador_tkinter.py
 ```
 
 #### Pasos para descargar:
@@ -98,7 +99,7 @@ python youtube_downloader_gui.py
 Ejecutar el script de línea de comandos:
 
 ```bash
-python youtube_downloader_cli.py
+python descargador_terminal.py
 ```
 
 #### Menú interactivo:
@@ -142,9 +143,11 @@ python youtube_downloader_cli.py
 youtube-downloader/
 ├── img/                        # Iconos y recursos gráficos
 │   └── icono1.png
+├── screenshots                 # Carpeta de imágens del proyecto 
+│   └── imagenes del proyecto   
 ├── descargas/                  # Carpeta por defecto para descargas
-├── youtube_downloader_cli.py   # Interfaz de línea de comandos
-├── youtube_downloader_gui.py   # Interfaz gráfica
+├── descargador_terminal.py   # Interfaz de línea de comandos
+├── descargador_tkinter.py   # Interfaz gráfica
 ├── requirements.txt            # Dependencias del proyecto
 ├── README.md                   # Este archivo
 ├── LICENSE                     # Licencia del proyecto
@@ -161,15 +164,6 @@ Pillow>=10.0.0
 termcolor>=2.3.0
 ```
 
-## 🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
-
-1. Fork del repositorio
-2. Crear una rama para tu característica (`git checkout -b feature/AmazingFeature`)
-3. Commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
 
 ## 🐛 Reporte de Errores
 
