@@ -26,6 +26,8 @@ YouTube Downloader es una aplicación completa para descargar videos y audio de 
 
 ![descargador_tkinter.py](screenshots/imagen1.png)
 
+![descargador_custom_tkinter.py](screenshots/imagen1.png)
+
 ### Interfaz CLI
 
 ![descargador_terminal.py](screenshots/imagen2.png)
